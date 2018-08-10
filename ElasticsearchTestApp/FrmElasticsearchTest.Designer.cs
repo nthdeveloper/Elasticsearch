@@ -35,26 +35,31 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDeleteIndex = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCreateIndex = new System.Windows.Forms.Button();
             this.txtIndexName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnGetDocument = new System.Windows.Forms.Button();
+            this.btnDeleteDocument = new System.Windows.Forms.Button();
+            this.btnUpdateDocument = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.datePostDate = new System.Windows.Forms.DateTimePicker();
+            this.numPostId = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddDocument = new System.Windows.Forms.Button();
             this.txtPostContent = new System.Windows.Forms.TextBox();
-            this.numPostId = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.datePostDate = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnUpdateDocument = new System.Windows.Forms.Button();
-            this.btnDeleteDocument = new System.Windows.Forms.Button();
-            this.btnDeleteIndex = new System.Windows.Forms.Button();
-            this.btnGetDocument = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtTextToSearch = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPort)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPostId)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -137,6 +142,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "(2) Create / Delete Index";
             // 
+            // btnDeleteIndex
+            // 
+            this.btnDeleteIndex.Location = new System.Drawing.Point(119, 111);
+            this.btnDeleteIndex.Name = "btnDeleteIndex";
+            this.btnDeleteIndex.Size = new System.Drawing.Size(155, 32);
+            this.btnDeleteIndex.TabIndex = 9;
+            this.btnDeleteIndex.Text = "Delete Index";
+            this.btnDeleteIndex.UseVisualStyleBackColor = true;
+            this.btnDeleteIndex.Click += new System.EventHandler(this.btnDeleteIndex_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -183,32 +198,52 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "(3) Add / Get / Update / Delete Document";
             // 
-            // label2
+            // btnGetDocument
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Text";
+            this.btnGetDocument.Location = new System.Drawing.Point(120, 152);
+            this.btnGetDocument.Name = "btnGetDocument";
+            this.btnGetDocument.Size = new System.Drawing.Size(155, 32);
+            this.btnGetDocument.TabIndex = 15;
+            this.btnGetDocument.Text = "Get Document";
+            this.btnGetDocument.UseVisualStyleBackColor = true;
+            this.btnGetDocument.Click += new System.EventHandler(this.btnGetDocument_Click);
             // 
-            // btnAddDocument
+            // btnDeleteDocument
             // 
-            this.btnAddDocument.Location = new System.Drawing.Point(120, 114);
-            this.btnAddDocument.Name = "btnAddDocument";
-            this.btnAddDocument.Size = new System.Drawing.Size(155, 32);
-            this.btnAddDocument.TabIndex = 8;
-            this.btnAddDocument.Text = "Add Document";
-            this.btnAddDocument.UseVisualStyleBackColor = true;
-            this.btnAddDocument.Click += new System.EventHandler(this.btnAddDocument_Click);
+            this.btnDeleteDocument.Location = new System.Drawing.Point(119, 228);
+            this.btnDeleteDocument.Name = "btnDeleteDocument";
+            this.btnDeleteDocument.Size = new System.Drawing.Size(155, 32);
+            this.btnDeleteDocument.TabIndex = 14;
+            this.btnDeleteDocument.Text = "Delete Document";
+            this.btnDeleteDocument.UseVisualStyleBackColor = true;
+            this.btnDeleteDocument.Click += new System.EventHandler(this.btnDeleteDocument_Click);
             // 
-            // txtPostContent
+            // btnUpdateDocument
             // 
-            this.txtPostContent.Location = new System.Drawing.Point(120, 74);
-            this.txtPostContent.Name = "txtPostContent";
-            this.txtPostContent.Size = new System.Drawing.Size(154, 21);
-            this.txtPostContent.TabIndex = 4;
-            this.txtPostContent.Text = "Some content";
+            this.btnUpdateDocument.Location = new System.Drawing.Point(120, 190);
+            this.btnUpdateDocument.Name = "btnUpdateDocument";
+            this.btnUpdateDocument.Size = new System.Drawing.Size(155, 32);
+            this.btnUpdateDocument.TabIndex = 13;
+            this.btnUpdateDocument.Text = "Update Document";
+            this.btnUpdateDocument.UseVisualStyleBackColor = true;
+            this.btnUpdateDocument.Click += new System.EventHandler(this.btnUpdateDocument_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 15);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Date";
+            // 
+            // datePostDate
+            // 
+            this.datePostDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePostDate.Location = new System.Drawing.Point(120, 47);
+            this.datePostDate.Name = "datePostDate";
+            this.datePostDate.Size = new System.Drawing.Size(154, 21);
+            this.datePostDate.TabIndex = 11;
             // 
             // numPostId
             // 
@@ -241,68 +276,78 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Id";
             // 
-            // datePostDate
+            // label2
             // 
-            this.datePostDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePostDate.Location = new System.Drawing.Point(120, 47);
-            this.datePostDate.Name = "datePostDate";
-            this.datePostDate.Size = new System.Drawing.Size(154, 21);
-            this.datePostDate.TabIndex = 11;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Text";
             // 
-            // label6
+            // btnAddDocument
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 15);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Date";
+            this.btnAddDocument.Location = new System.Drawing.Point(120, 114);
+            this.btnAddDocument.Name = "btnAddDocument";
+            this.btnAddDocument.Size = new System.Drawing.Size(155, 32);
+            this.btnAddDocument.TabIndex = 8;
+            this.btnAddDocument.Text = "Add Document";
+            this.btnAddDocument.UseVisualStyleBackColor = true;
+            this.btnAddDocument.Click += new System.EventHandler(this.btnAddDocument_Click);
             // 
-            // btnUpdateDocument
+            // txtPostContent
             // 
-            this.btnUpdateDocument.Location = new System.Drawing.Point(120, 190);
-            this.btnUpdateDocument.Name = "btnUpdateDocument";
-            this.btnUpdateDocument.Size = new System.Drawing.Size(155, 32);
-            this.btnUpdateDocument.TabIndex = 13;
-            this.btnUpdateDocument.Text = "Update Document";
-            this.btnUpdateDocument.UseVisualStyleBackColor = true;
-            this.btnUpdateDocument.Click += new System.EventHandler(this.btnUpdateDocument_Click);
+            this.txtPostContent.Location = new System.Drawing.Point(120, 74);
+            this.txtPostContent.Name = "txtPostContent";
+            this.txtPostContent.Size = new System.Drawing.Size(154, 21);
+            this.txtPostContent.TabIndex = 4;
+            this.txtPostContent.Text = "Some content";
             // 
-            // btnDeleteDocument
+            // groupBox4
             // 
-            this.btnDeleteDocument.Location = new System.Drawing.Point(119, 228);
-            this.btnDeleteDocument.Name = "btnDeleteDocument";
-            this.btnDeleteDocument.Size = new System.Drawing.Size(155, 32);
-            this.btnDeleteDocument.TabIndex = 14;
-            this.btnDeleteDocument.Text = "Delete Document";
-            this.btnDeleteDocument.UseVisualStyleBackColor = true;
-            this.btnDeleteDocument.Click += new System.EventHandler(this.btnDeleteDocument_Click);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.btnSearch);
+            this.groupBox4.Controls.Add(this.txtTextToSearch);
+            this.groupBox4.Location = new System.Drawing.Point(8, 328);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(289, 154);
+            this.groupBox4.TabIndex = 13;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "(4) Search";
             // 
-            // btnDeleteIndex
+            // label7
             // 
-            this.btnDeleteIndex.Location = new System.Drawing.Point(119, 111);
-            this.btnDeleteIndex.Name = "btnDeleteIndex";
-            this.btnDeleteIndex.Size = new System.Drawing.Size(155, 32);
-            this.btnDeleteIndex.TabIndex = 9;
-            this.btnDeleteIndex.Text = "Delete Index";
-            this.btnDeleteIndex.UseVisualStyleBackColor = true;
-            this.btnDeleteIndex.Click += new System.EventHandler(this.btnDeleteIndex_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(30, 15);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Text";
             // 
-            // btnGetDocument
+            // btnSearch
             // 
-            this.btnGetDocument.Location = new System.Drawing.Point(120, 152);
-            this.btnGetDocument.Name = "btnGetDocument";
-            this.btnGetDocument.Size = new System.Drawing.Size(155, 32);
-            this.btnGetDocument.TabIndex = 15;
-            this.btnGetDocument.Text = "Get Document";
-            this.btnGetDocument.UseVisualStyleBackColor = true;
-            this.btnGetDocument.Click += new System.EventHandler(this.btnGetDocument_Click);
+            this.btnSearch.Location = new System.Drawing.Point(120, 73);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(155, 32);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtTextToSearch
+            // 
+            this.txtTextToSearch.Location = new System.Drawing.Point(120, 36);
+            this.txtTextToSearch.Name = "txtTextToSearch";
+            this.txtTextToSearch.Size = new System.Drawing.Size(154, 21);
+            this.txtTextToSearch.TabIndex = 4;
+            this.txtTextToSearch.Text = "third";
             // 
             // FrmElasticsearchTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 552);
+            this.ClientSize = new System.Drawing.Size(620, 602);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -317,6 +362,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPostId)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -345,6 +392,10 @@
         private System.Windows.Forms.TextBox txtPostContent;
         private System.Windows.Forms.Button btnDeleteIndex;
         private System.Windows.Forms.Button btnGetDocument;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtTextToSearch;
     }
 }
 

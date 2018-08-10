@@ -98,16 +98,16 @@ namespace ElasticsearchTestApp
                 .Type("post"));
         }
 
-        /*
-        private void doTermQuery()
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             var result = m_EsClient.Search<Post>(s =>
             s.From(0)
             .Size(100)
             .Index(txtIndexName.Text)
-            .Type("post")
-            .Query(p => p.Term(d => d.PostText, "some")));
-        }
-        */
+            .Type("post")            
+            .Query(q => q.Match(d => d.Field(p=> p.PostText).Query(txtTextToSearch.Text)))
+            .Highlight(h=> h.Fields(f=> f.Field(p=>p.PostText)))            
+            );
+        }        
     }
 }
