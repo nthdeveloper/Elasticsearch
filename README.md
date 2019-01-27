@@ -1,6 +1,6 @@
 # Elasticsearch Sample Test Application
 
-Simple usage tests for Elasticsearch. Developed [Nest](https://www.nuget.org/packages/Nest) library.
+Simple usage tests for Elasticsearch. Developed with [Nest](https://www.nuget.org/packages/Nest) library.
 
 ![Screenshot](/images/screenshot.png)
 
